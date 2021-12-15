@@ -5,10 +5,10 @@
                 <div class="my-3">
                     <div class="modal-body-section">
                         <div class="modal-close-button" @click="onClose">
-                            <img src="../assets/close.svg" alt="" />
+                            <img src="../assets/images/close.svg" alt="" />
                         </div>
                         <div class="center-focus">
-                            <img src="../assets/avatar_filter.svg" alt="" style="height:50px; width:50px;"/>
+                            <img src="../assets/images/avatar_filter.svg" alt="" style="height:50px; width:50px;"/>
                         </div>
                         <div class="center-focus">
                             <p class="glo-text-title font-weight-medium" style="font-size: 18px;">Rishabh Dubhey S/O Krishvaran</p>
@@ -59,7 +59,7 @@
                         <div class="center-focus">
                             <div class="modal-input">
                                 <button type="submit" class="searchButton">
-                                    <img src="../assets/Email Icon.svg" alt=""/>
+                                    <img src="../assets/images/Email Icon.svg" alt=""/>
                                 </button>
                                 <input type="text" class="modal-input" placeholder="Email Address*">
                             </div>
@@ -67,7 +67,7 @@
                         <div class="center-focus">
                             <div class="modal-input">
                                 <button type="submit" class="searchButton">
-                                    <img src="../assets/Email Icon.svg" alt=""/>
+                                    <img src="../assets/images/Email Icon.svg" alt=""/>
                                 </button>
                                 <input type="text" class="modal-input" placeholder="Additional Email Address*">
                             </div>
@@ -75,7 +75,7 @@
                         <div class="center-focus">
                             <div class="modal-input">
                                 <button type="submit" class="searchButton">
-                                    <img src="../assets/Email Icon.svg" alt=""/>
+                                    <img src="../assets/images/Email Icon.svg" alt=""/>
                                 </button>
                                 <input type="text" class="modal-input" placeholder="Additional Email Address*">
                             </div>
@@ -83,7 +83,7 @@
                         <div class="center-focus">
                             <div class="modal-input">
                                 <button type="submit" class="searchButton">
-                                    <img src="../assets/LinkedIn.png" alt=""/>
+                                    <img src="../assets/images/LinkedIn.png" alt=""/>
                                 </button>
                                 <input type="text" class="modal-input" placeholder="Linkedin Link">
                             </div>
@@ -91,7 +91,7 @@
                         <div class="center-focus">
                             <div class="modal-input">
                                 <button type="submit" class="searchButton">
-                                    <img src="../assets/Facebook.png" alt=""/>
+                                    <img src="../assets/images/Facebook.png" alt=""/>
                                 </button>
                                 <input type="text" class="modal-input" placeholder="Facebook Link">
                             </div>
@@ -99,13 +99,13 @@
                         <div class="center-focus">
                             <div class="modal-input mr-8">
                                 <button type="submit" class="searchButton">
-                                    <img src="../assets/Instagram.png" alt=""/>
+                                    <img src="../assets/images/Instagram.png" alt=""/>
                                 </button>
                                 <input type="text" class="modal-input" placeholder="@Instagram Link">
                             </div>
                             <div class="modal-input">
                                 <button type="submit" class="searchButton">
-                                    <img src="../assets/Telegram.png" alt=""/>
+                                    <img src="../assets/images/Telegram.png" alt=""/>
                                 </button>
                                 <input type="text" class="modal-input" placeholder="@Telegram Link">
                             </div>

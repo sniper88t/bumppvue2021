@@ -32,69 +32,67 @@
                   <th style="width: 40%;">Team Member</th>
                   <th style="width: 10%;"></th>
                   <th style="width: 10%;"></th>
-                  <th style="width: 20%;">Platform Access</th>
-                  <th style="width: 10%;"></th>
-                  <th style="width: 10%;"></th>
+                  <th style="width: 24%;">Platform Access</th>
+                  <th style="width: 8%;"></th>
+                  <th style="width: 8%;"></th>
                 </tr>
                 <tr>
                   <td>
-                    <div class="row flex">
-                      <div><v-avatar size="30px"><img src="/img1.png" ></v-avatar></div>
-                      <div class="col">
-                        <div>Joshua Pang</div>
-                        <div>Tester</div>
+                    <div class="row">
+                      <div class="tbl_img"><v-avatar size="30px"><img src="/img1.png" ></v-avatar></div>
+                      <div class="col px-6">
+                        <div class="glo-text-title glo-text-format">Joshua Pang</div>
+                        <div class="glo-text-format" style="color:#565656">Tester</div>
                       </div>
                     </div>
                   </td>
                   <td>
                     <v-img 
-                      src="../assets/Indonesia.png"
+                      src="../assets/images/Indonesia.png"
                       height="20"
                       width="30"
                       class="ml-2"
                       >
                     </v-img>
                   </td>
-                  <td><a href="">View Card</a></td>
+                  <td><a href="" style="color: #2C305D;"><span class="font-weight-medium glo-text-title">View Card</span></a></td>
                   <td>
-                    <select name="platform_access" id="pAccess" class="form-control">
-                      <option value="select">Please Select</option>
-                      <option value="food">Food</option>
-                      <option value="beverage">Beverage</option>
+                    <select name="platform_access" id="pAccess" class="form-control role_select">
+                      <option value="admin">Admin</option>
+                      <option value="view-only">View-Only</option>
                     </select>
                   </td>
-                  <td><v-icon>fas fa-pen</v-icon></td>
-                  <td><v-icon>fas fa-times-circle</v-icon></td>
+                  <td><v-img src="../assets/images/Edit icon.svg" height="16" width="16"></v-img></td>
+                  <td><v-icon style="color:red;" height="16" width="16">fas fa-times-circle</v-icon></td>
                 </tr>
                 <tr>
                   <td>
-                    <div class="row flex items-center">
-                      <div><v-avatar size="30px"><img src="/img1.png" ></v-avatar></div>
-                      <div class="col">
-                        <div>Jane Lee</div>
-                        <div>Backend Engineer</div>
+                    <div class="row ">
+                      <div class="tbl_img"><v-avatar size="30px"><img src="/img2.png" ></v-avatar></div>
+                      <div class="col px-6">
+                        <div class="glo-text-title glo-text-format">Jane Lee</div>
+                        <div class="glo-text-format" style="color:#565656">Backend Engineer</div>
                       </div>
                     </div>
                   </td>
                   <td>
                     <v-img 
-                      src="../assets/Singapore.png"
+                      src="../assets/images/Singapore.png"
                       height="20"
                       width="30"
                       class="ml-2"
                       >
                     </v-img>
                   </td>
-                  <td><a href="">View Card</a></td>
+                  <td><a href="" style="color: #2C305D;"><span class="font-weight-medium glo-text-title">View Card</span></a></td>
                   <td>
-                    <select name="platform_access" id="pAccess" class="form-control">
-                      <option value="select">Please Select</option>
-                      <option value="food">Food</option>
-                      <option value="beverage">Beverage</option>
+                    <select name="platform_access" id="pAccess" class="form-control role_select">
+                      <option value="admin">Admin</option>
+                      <option value="view-only">View-Only</option>
                     </select>
                   </td>
-                  <td><v-icon>fas fa-pen</v-icon></td>
-                  <td><v-icon>fas fa-times-circle</v-icon></td>
+                  <td><v-img src="../assets/images/Edit icon.svg" height="16" width="16"></v-img></td>
+                  <td><v-icon style="color:red;" height="16" width="16">fas fa-times-circle</v-icon></td>
                 </tr>
               </table>
             </v-container>
@@ -145,7 +143,7 @@ import AddMember from '../components/AddMember.vue';
         this.desserts = [
           { avatar: '/img1.png' ,
             name: 'Frozen Yogurt',
-             applied: '04/4/2019',
+            applied: '04/4/2019',
             progress: 70,
             rating: 4,
           },

@@ -5,7 +5,7 @@
                 <v-row align="center">
                     <v-col md="3" class="mb-4">
                         <v-img 
-                        src="../assets/starbucks.svg"
+                        src="../assets/images/starbucks.svg"
                         height="30"
                         width="30"
                         class="ml-2"
@@ -22,10 +22,18 @@
             </v-container>
             
             <v-list dense nav>
-                <v-list-item class="sub-menu-bg" rounded-lg router to="/applications">
+                <v-list-item class="sub-menu-bg nav-item" router to="/" style="border-radius: 14px;">
+                    <v-list-item-action>
+                        <v-icon size="30">fas fa-id-card</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content >
+                        <v-list-item-title class="subtitle-1 font-weight-bold glo-text-title" >Home Page</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item class="sub-menu-bg nav-item" router to="/teammates" style="border-radius: 14px;">
                     <v-list-item-action>
                         <v-img 
-                        src="../assets/your_team.svg"
+                        src="../assets/images/your_team.svg"
                         height="30"
                         width="30"
                         class="ml-2"
@@ -35,21 +43,13 @@
                     <v-list-item-content >
                         <v-list-item-title class="subtitle-1 font-weight-bold glo-text-title" >Your Team</v-list-item-title>
                     </v-list-item-content>
-                    </v-list-item>
-                <v-list-item class="sub-menu-bg" router to="/" >
-                    <v-list-item-action>
-                        <v-icon>fas fa-id-card</v-icon>
-                    </v-list-item-action>
-                    <v-list-item-content >
-                        <v-list-item-title class="subtitle-1 font-weight-bold glo-text-title" >Pending Cards</v-list-item-title>
-                    </v-list-item-content>
                 </v-list-item>
             </v-list>
             
             <div class="nav-bottom-panel">
                 <div class="row">
                     <v-img 
-                        src="../assets/03.png"
+                        src="../assets/images/03.png"
                         height="30"
                         width="30"
                         class="ml-2"
@@ -103,4 +103,9 @@ margin: 1rem;
     margin-top: auto;
     margin-bottom: 5px;
 }
+
+.theme--light.v-list-item--active:hover::before, .theme--light.v-list-item--active::before {
+    border-radius: 14px!important;
+}
+
 </style>

@@ -2,6 +2,14 @@
 .glo-text-title{
     color: #2C305D;
 }
+
+.glo-text-format{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+}
 .glo-bg1-custom{
     background-color: #2C305D;
 }
@@ -63,13 +71,24 @@ table{
     border-collapse: collapse;
 }
 
+.tbl_img{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
 th,
 td {
-  padding: 1em 0.5em 1em 1em;
+  padding: 1em 0.5em 1em 3em;
   vertical-align: text-top;
   text-align: left;
   text-indent: -0.5em;
 }
+
+td{
+  padding: 0.6em 0.5em 0.6em 3em!important;
+}
+
 
 
 tr:nth-child(1), tr:nth-last-child(1){
@@ -95,6 +114,15 @@ tr {
 td::before {
   display: none;
 }
+
+.role_select{
+    border: 1px solid #2C305D;
+    border-radius: 10px;
+    padding: 7px 8px;
+    width: 8rem;
+    -webkit-appearance: menulist;
+}
+
 
 /**Modal style sheet**/
 .modal-layout{
@@ -130,18 +158,11 @@ td::before {
 .add-button {
 	width: 120px;
   height: 40px;
-  left: 0px;
-  top: 0px;
   background: #FF5359;
   border-radius: 10px;
   text-align: center;
-  margin-right: 4px;
 }
 .add-button-text{
-  width: 99px;
-  height: 30px;
-  left: calc(50% - 99px/2 + 0.5px);
-  top: calc(50% - 30px/2);
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
