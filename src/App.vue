@@ -1,11 +1,12 @@
 <template>
   <v-app>
     <Navbar/>
-    <v-content class="ma-4">
-      <router-view></router-view>
-    </v-content>
+     <v-main>
+      <v-container fluid class="bg-panel">
+        <router-view></router-view>
+      </v-container>
+    </v-main>
   </v-app>
- 
 </template>
 
 <script>
@@ -25,3 +26,8 @@ export default {
   }),
 };
 </script>
+
+<style scoped>
+@import 'assets/styles/common.css';
+
+</style>

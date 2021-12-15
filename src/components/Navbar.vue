@@ -1,123 +1,100 @@
 <template>
-   <nav>
-      <v-navigation-drawer  v-model="drawer" app class="nav-bg py-0">
-          <v-container>
-              <v-row>
-                  <v-col md="9">
+    <nav>
+        <v-navigation-drawer  v-model="drawer" app class="nav-bg py-0">
+            <v-container class="my-12">
+                <v-row align="center">
+                    <v-col md="3" class="mb-4">
+                        <v-img 
+                        src="../assets/starbucks.svg"
+                        height="30"
+                        width="30"
+                        class="ml-2"
+                        >
+                        </v-img>
+                    </v-col>
+                    <v-col md="6">
+                        <p class="black--text logo-title">Singapore Manufacturing Federation</p>
+                    </v-col>
+                    <v-col md="3" class="mb-4 pl-4 logo-arrow">
+                        <span>></span>
+                    </v-col>
+                </v-row>
+            </v-container>
+            
+            <v-list dense nav>
+                <v-list-item class="sub-menu-bg" rounded-lg router to="/applications">
+                    <v-list-item-action>
+                        <v-img 
+                        src="../assets/your_team.svg"
+                        height="30"
+                        width="30"
+                        class="ml-2"
+                        >
+                        </v-img>
+                    </v-list-item-action>
+                    <v-list-item-content >
+                        <v-list-item-title class="subtitle-1 font-weight-bold glo-text-title" >Your Team</v-list-item-title>
+                    </v-list-item-content>
+                    </v-list-item>
+                <v-list-item class="sub-menu-bg" router to="/" >
+                    <v-list-item-action>
+                        <v-icon>fas fa-id-card</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content >
+                        <v-list-item-title class="subtitle-1 font-weight-bold glo-text-title" >Pending Cards</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+            </v-list>
+            
+            <div class="nav-bottom-panel">
+                <div class="row">
                     <v-img 
-                    src="../assets/bumpplogo_sidebar.png"
-                    max-height="100"
-                    max-width="50"
-                    >
+                        src="../assets/03.png"
+                        height="30"
+                        width="30"
+                        class="ml-2"
+                        >
                     </v-img>
-                  </v-col>
-                  <v-col md="3">
-                    <h4 class="black--text">Bumpp</h4>
-                  </v-col>
-              </v-row>
-          </v-container>
-         
-          <v-list nav dense>
-              <v-list-item  router to="/" >
-                  <v-list-item-action>
-                     <v-icon small>fas fa-tachometer-alt</v-icon>
-                  </v-list-item-action>
-                  <v-list-item-content >
-                      <v-list-item-title >Dashboard</v-list-item-title>
-                  </v-list-item-content>
-              </v-list-item>
-              <v-list-item  router to="/applications" >
-                  <v-list-item-action>
-                     <v-icon small>fas fa-users</v-icon>
-                  </v-list-item-action>
-                  <v-list-item-content >
-                      <v-list-item-title >Your Team</v-list-item-title>
-                  </v-list-item-content>
-                  <v-chip color="yellow darken-3" small>3</v-chip>
-                </v-list-item>
-          </v-list>
-          <v-layout row style="position: absolute; bottom:0" align-center="">
-                <v-flex md-10>
-                    <v-list-item dense>
-                            <v-list-item-avatar class="ml-2">
-                                <v-img src="/03.png"></v-img>
-                            </v-list-item-avatar>
-                 <v-list-item-action class="ml-8">
-                            <v-badge color="error" overlap>
-                                    <template slot="badge"> 3 </template>
-                            <v-icon color="tertiary">mdi-bell</v-icon>
-                            </v-badge>
-                  </v-list-item-action>
-                     </v-list-item>
-                </v-flex>
-                <v-flex md-2>
-                    <v-tooltip top>
-                            <template v-slot:activator="{ on }">
-                                <v-btn  text icon  v-on="on" class="mt-2" >
-                                    <v-icon dark right>fas fa-sign-out-alt</v-icon>
-                                </v-btn>
-                            </template>
-                            <span>Exit</span>
-                    </v-tooltip>
-                    
-                </v-flex>
-                <v-flex md12>
-            <v-card color="grey darken-1" >
-
-          <v-list-item dense>
-           <v-list-item-action>
-                    <v-btn class="mx-2" fab dark small color="blue">
-                        <v-icon dark>mdi-heart</v-icon>
-                    </v-btn>
-                  </v-list-item-action>
-                  <v-list-item-content >
-                      <v-list-item-title >AAE IdeaPro</v-list-item-title>
-                  </v-list-item-content>
-                     <v-icon dark class="mr-2">fas fa-chevron-down</v-icon>
-                </v-list-item>
-
-  </v-card>
-                </v-flex>
-          </v-layout>
-         
-
-   
-        
-
-          
-      </v-navigation-drawer>
-   </nav>
+                    <p class="glo-text-title body2 ml-2 pt-1 font-weight-bold">Joshua Pang</p>
+                </div>
+            </div>
+        </v-navigation-drawer>
+    </nav>
 </template>
 <script>
 //import Popup from './Popup.vue'
 export default {
    data: () => ({
       drawer: true,
-       interval: {},
-        value: 0,
      
     }),
     components: {
     //Popup
   },
-  beforeDestroy () {
-      clearInterval(this.interval)
-    },
     mounted () {
-      this.interval = setInterval(() => {
-        if (this.value === 100) {
-          return (this.value = 0)
-        }
-        this.value += 10
-      }, 1000)
+
     },
 
    
 }
 </script>
 <style scoped>
-.nav-bg{
-    color: #F5F5F7;
+.logo-title{
+    letter-spacing: .0.5rem;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.2rem;
+}
+.logo-arrow{
+    font-weight: bold;
+    font-size: 22px;
+    color:#2C305D;
+    cursor: pointer;
+}
+.nav-bottom-panel{
+    bottom:0;
+    position: absolute;
+    margin: 3rem;
 }
 .v-progress-circular {
 margin: 1rem;

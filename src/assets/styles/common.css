@@ -1,0 +1,161 @@
+
+.glo-text-title{
+    color: #2C305D;
+}
+.glo-bg1-custom{
+    background-color: #2C305D;
+}
+
+.bg-panel{
+    background-color: #CFCED8;
+    overflow: hidden;
+}
+.sub-menu-bg{
+   background-color:  rgba(207, 206, 216, 0.6);
+}
+.color-custom{
+    color: #CFCED8;
+}
+
+/**search_button*/
+
+.search {
+ background-color: white;
+ border-radius: 10px;
+ display: flex;
+ width: 25%;
+}
+  
+.searchTerm {
+    border-right: none;
+    padding: 5px;
+    height: 40px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+    font-size: 20px;
+    width:100%;
+}
+
+.searchTerm:focus{
+    color: black;
+}
+  
+.searchButton {
+  width: 42px;
+  height: 42px;
+  text-align: center;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 8px;
+  color:#2C305D;
+
+}
+
+
+/**Table style sheet**/
+table{
+    margin: 1em 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 1em 0.5em 1em 1em;
+  vertical-align: text-top;
+  text-align: left;
+  text-indent: -0.5em;
+}
+
+
+tr:nth-child(1), tr:nth-last-child(1){
+    background-color: rgba(255, 255, 255, 0.25);
+    border-bottom: 0px!important;;
+}
+
+th {
+  vertical-align: bottom;
+  background-color: rgba(207, 206, 216, 0.2);
+  color: #2C305D;
+  font-weight: bold;
+}
+
+tr {
+  border-bottom: 0.5px solid #BABFCE!important;
+  margin: 8px auto;
+}
+.head-section{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+td::before {
+  display: none;
+}
+
+/**Modal style sheet**/
+.modal-layout{
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  height:100%;
+  padding: 0 3px;
+  background: linear-gradient(180deg, #E0F4FF 0%, #BABFCE 80%);
+  border-radius: 10px;
+  max-height: 800px;
+}
+
+.modal-body{
+  min-height: calc(100% - (1.75rem * 2));
+  overflow-x: hidden;
+}
+.modal-body-section{
+  position: relative;
+  padding: 25px 62px;
+
+}
+
+.modal-close-button{
+  position: absolute;
+  top: 14px;
+  left:14px;
+  height: 30px;
+  width:30px;
+}
+
+/**Add Member Button style**/
+.add-button {
+	width: 120px;
+  height: 40px;
+  left: 0px;
+  top: 0px;
+  background: #FF5359;
+  border-radius: 10px;
+  text-align: center;
+  margin-right: 4px;
+}
+.add-button-text{
+  width: 99px;
+  height: 30px;
+  left: calc(50% - 99px/2 + 0.5px);
+  top: calc(50% - 30px/2);
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+  vertical-align: text-top;
+  text-align: center;
+  font-feature-settings: 'liga' off;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+
+.add-button:hover {
+	transform: scale(1.1);
+	border: 1px solid red;
+}
+

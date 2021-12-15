@@ -1,138 +1,115 @@
 <template>
-<v-layout row>
-    <v-flex md3>
-        <v-app style="background-color: grey lighten-1;">
-            <v-container ml-5 mt-5>
-                <h4 class="mb-5">FILTERS</h4>
-                 <v-list-item>
-                  <v-list-item-action>
-                     <v-icon small>fas fa-user-plus</v-icon>
-                  </v-list-item-action>
-                  <v-list-item-content >
-                      <v-list-item-title >New Condidiates</v-list-item-title>
-                  </v-list-item-content>
-              </v-list-item>
-              <v-list-item>
-                  <v-list-item-action>
-                     <v-icon small>fas fa-user-plus</v-icon>
-                  </v-list-item-action>
-                  <v-list-item-content >
-                      <v-list-item-title >fas fa-user-tag</v-list-item-title>
-                  </v-list-item-content>
-              </v-list-item>
-              <v-list-item>
-                  <v-list-item-action>
-                     <v-icon small>fas fa-user-cog</v-icon>
-                  </v-list-item-action>
-                  <v-list-item-content >
-                      <v-list-item-title >still in the running</v-list-item-title>
-                  </v-list-item-content>
-              </v-list-item>
-              <v-text-field
-            label="Costom Search"
-            prepend-icon="search"
-            class="ml-3 mr-12"
-            
-          ></v-text-field>
-          <v-select
-                v-model="value"
-                :items="items"
-                 chips
-                 attach
-                 clearable
-                label="Keyword"
-                multiple
-                class="ml-3 mr-12"
-          ></v-select>
-          <v-select
-                v-model="job"
-                :items="jobs"
-                 chips
-                 attach
-                 clearable
-                label="Jobs"
-                multiple
-                class="ml-3 mr-12"
-          ></v-select>
-        </v-container>
-        </v-app>
-    </v-flex>
-    <v-flex md9>
-         <v-app style="background-color: white;" class="ma-n4">
+  <div class="bg-panel" >
+    <div class="mx-10 my-10">
+      <v-col ma="4">
+        <v-row md="12">
+          <h1 class="glo-text-title mb-3">Your Team</h1>
+        </v-row>
+        <v-row md="12">
+          <h3 class=" font-weight-medium glo-text-title pr-10">Manage or create business cards for your team. If your coworkers create company business cards through the app, they will appear under requests. Users won’t be able to create verified business cards associated to your company, unless accepted your team.</h3>
+        </v-row>
+      </v-col>
+    </div>
+    <div class="mx-10 mt-10 mb-6">
+      <div class="search-panel">
+        <div class="search">
+            <button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+            </button>
+            <input type="text" class="searchTerm" placeholder="Search by name and position">
+        </div>
+        <div class="add-button" @click="addMemberVisible = true">
+          <a target="_blank" rel="noopener"><label class="add-button-text">Add Members</label></a>
+        </div>
+      </div>
+    </div>
+    <div class="mx-10">
+      <v-flex md="12">
+         <v-app style="background-color: #CFCED8;" class="ma-n4">
             <v-container>
-                <template>
-  <v-data-table
-  v-model="selected"
-  :single-select="singleSelect"
-  item-key="name"
-    show-select
-    :headers="headers"
-    :items="desserts"
-    sort-by="calories"
-   class="mr-2"
-  >
-    <template v-slot:top>
-      <v-toolbar flat color="white">
-        <v-toolbar-title>Applicants</v-toolbar-title>
-        <v-divider
-          class="mx-4"
-          inset
-          vertical
-        ></v-divider>
-        <v-spacer></v-spacer>
-        <v-btn color="grey lighten-1" dark class="mb-2 mr-2" v-on="on" text ><v-icon left>fas fa-upload</v-icon> CSV Import</v-btn>
-        <v-btn color="success" dark class="mb-2" v-on="on" text><v-icon left>add</v-icon> Add Condidate</v-btn>
-       
-      </v-toolbar>
-    </template>
-    <template v-slot:item.avatar="{ item }">
-    <v-avatar size="30px"><img :src="item.avatar" ></v-avatar>
-    </template>
-    <template v-slot:item.rating="{ item }">
-        <v-rating v-model="item.rating" background-color="purple lighten-3"
-      color="purple"
-      small dense></v-rating>
-    </template>
-     <template v-slot:item.progress="{ item }">
-        <v-progress-linear
-      color="light-blue"
-      height="6"
-      v-model= "item.progress"
-      striped
-    ></v-progress-linear>
-    </template>
-   
-    
-    <template v-slot:item.action="{ item }">
-      <v-icon
-        small
-        class="mr-2"
-        @click="editItem(item)"
-        color="green"
-      >
-        edit
-      </v-icon>
-      <v-icon
-        small
-        @click="deleteItem(item)"
-        color="red"
-      >
-        delete
-      </v-icon>
-    </template>
-    <template v-slot:no-data>
-      <v-btn color="primary" @click="initialize">Reset</v-btn>
-    </template>
-  </v-data-table>
-</template>
+              <table id="teammates">
+                <tr class="head-section">
+                  <th style="width: 40%;">Team Member</th>
+                  <th style="width: 10%;"></th>
+                  <th style="width: 10%;"></th>
+                  <th style="width: 20%;">Platform Access</th>
+                  <th style="width: 10%;"></th>
+                  <th style="width: 10%;"></th>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="row flex">
+                      <div><v-avatar size="30px"><img src="/img1.png" ></v-avatar></div>
+                      <div class="col">
+                        <div>Joshua Pang</div>
+                        <div>Tester</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <v-img 
+                      src="../assets/Indonesia.png"
+                      height="20"
+                      width="30"
+                      class="ml-2"
+                      >
+                    </v-img>
+                  </td>
+                  <td><a href="">View Card</a></td>
+                  <td>
+                    <select name="platform_access" id="pAccess" class="form-control">
+                      <option value="select">Please Select</option>
+                      <option value="food">Food</option>
+                      <option value="beverage">Beverage</option>
+                    </select>
+                  </td>
+                  <td><v-icon>fas fa-pen</v-icon></td>
+                  <td><v-icon>fas fa-times-circle</v-icon></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="row flex items-center">
+                      <div><v-avatar size="30px"><img src="/img1.png" ></v-avatar></div>
+                      <div class="col">
+                        <div>Jane Lee</div>
+                        <div>Backend Engineer</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <v-img 
+                      src="../assets/Singapore.png"
+                      height="20"
+                      width="30"
+                      class="ml-2"
+                      >
+                    </v-img>
+                  </td>
+                  <td><a href="">View Card</a></td>
+                  <td>
+                    <select name="platform_access" id="pAccess" class="form-control">
+                      <option value="select">Please Select</option>
+                      <option value="food">Food</option>
+                      <option value="beverage">Beverage</option>
+                    </select>
+                  </td>
+                  <td><v-icon>fas fa-pen</v-icon></td>
+                  <td><v-icon>fas fa-times-circle</v-icon></td>
+                </tr>
+              </table>
             </v-container>
         </v-app>
-    </v-flex>
-</v-layout>
- 
+      </v-flex>
+    </div>
+    <AddMember :status="createPostStatus" :show="addMemberVisible" :detail="createPostDetail" @close="addMemberVisible = false"></AddMember>
+  </div>
 </template>
 <script>
+import AddMember from '../components/AddMember.vue';
   export default {
+    components: {
+      AddMember
+    },
     data: () => ({
       items: ['Key1', 'Key2'],
       value: ['Key1', 'Key2'],
@@ -153,8 +130,8 @@
         { text: 'RATING', value: 'rating' },
         { text: '', value: 'action', sortable: false },
       ],
-     
-      
+      search:'',
+      addMemberVisible: false
 
     }),
    
@@ -221,3 +198,20 @@
     },
   }
 </script>
+
+<style scoped>
+@import '../assets/styles/common.css';
+
+.search-panel{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.div{
+  overflow: auto;
+}
+
+
+</style>
