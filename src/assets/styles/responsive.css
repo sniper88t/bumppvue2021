@@ -18,7 +18,66 @@
     .td{
         padding: 0.5em!important;
     }
-    
+    .edit_confirm_modal{
+        max-width: 340px;
+        width: 100%;
+        border-radius: 10px;
+        margin-top: 200px!important;
+      }
+    .edit_logo{
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 4px;
+    }
+    .edit_logo img{
+        width: 30px!important;
+        height:30px!important;
+    }
+    .edit_title{
+        margin-bottom: 6px!important;
+    }
+    .center-focus{
+        margin-bottom: 8px!important;
+    }
+
+    .modal-close-button{
+        position: absolute;
+        top: 10px;
+        left:10px;
+        height: 20px;
+        width:20px;
+    }
+    .edit_desc{
+        font-size:12px!important;
+        line-height: 1rem!important;
+    }
+    .col-3, .col-9{
+        padding: 10px 12px!important;
+    }
+    .modal-layout{
+        max-height: 640px!important;
+    }
+   
+}
+
+@media only screen and (max-width: 960px) {
+    .modal-layout{
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+        height:100%;
+        padding: 0 3px;
+        background: linear-gradient(180deg, #E0F4FF 0%, #BABFCE 80%);
+        border-radius: 10px;
+        max-height: 800px;
+    }
+    .modal-body-section{
+        padding: 10px 10px;
+    }
+
+    .modal-main-show{
+        top:20px!important;
+    }
    
 }
 

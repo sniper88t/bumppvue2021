@@ -186,6 +186,13 @@ td::before {
   height: 30px;
   width:30px;
 }
+.edit_desc{
+  font-size: 16px;
+  color: #2C305D;
+  text-align: center;
+  font-weight:bold;
+  
+}
 
 /**Add Member Button style**/
 .add-button {

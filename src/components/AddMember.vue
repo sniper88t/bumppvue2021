@@ -7,11 +7,11 @@
                         <div class="modal-close-button" @click="onClose">
                             <img src="../assets/images/close.svg" alt="" />
                         </div>
-                        <div class="center-focus">
+                        <div class="center-focus edit_logo">
                             <img src="../assets/images/avatar_filter.svg" alt="" style="height:50px; width:50px;"/>
                         </div>
                         <div class="center-focus">
-                            <p class="glo-text-title font-weight-bold" style="font-size: 18px;">Rishabh Dubhey S/O Krishvaran</p>
+                            <p class="glo-text-title font-weight-bold edit_title" style="font-size: 18px;">Rishabh Dubhey S/O Krishvaran</p>
                         </div>
                         <div class="center-focus">
                             <div class="modal-input">
@@ -20,24 +20,24 @@
                         </div>
                         <div class="center-focus">
                             <v-row>
-                                <v-col cols="2">
+                                <v-col cols="3" sm="2">
                                     <select name="platform_access" class="form-control phone_prefix">
                                         <option value="admin">+65</option>
                                         <option value="view-only">+865</option>
                                     </select>
                                 </v-col>
-                                <v-col cols="4">
+                                <v-col cols="9" sm="4">
                                     <div class="modal-input">
                                         <input type="text" class="modal-input px-3 py-3" placeholder="Mobile Number*">
                                     </div>
                                 </v-col>
-                                <v-col cols="2">
+                                <v-col cols="3" sm="2">
                                     <select name="platform_access" class="form-control phone_prefix" style="opacity:0.6;">
                                         <option value="admin">+65</option>
                                         <option value="view-only">+765</option>
                                     </select>
                                 </v-col>
-                                <v-col cols="4">
+                                <v-col cols="9" sm="4">
                                     <div class="modal-input" style="opacity:0.6;">
                                         <input type="text" class="modal-input px-3 py-3" placeholder="Additional Number*" >
                                     </div>
@@ -92,7 +92,7 @@
                             </div>
                         </div>
                         <div class="center-focus">
-                            <p class="subtitle-1 glo-text-title text-center font-weight-medium">Names and profile pictures can only be edited by users themselves, through the mobile app. Company details can be edited through your company’s page on this platform.</p>
+                            <p class="edit_desc">Names and profile pictures can only be edited by users themselves, through the mobile app. Company details can be edited through your company’s page on this platform.</p>
                         </div>
                         <div class="bottom-btn">
                             <div class="add-button" @click="saveData()">
@@ -183,7 +183,6 @@ p {
 .modal-input-body {
     border-right: none;
     padding: 5px;
-    height: 40px;
     border-radius: 5px 0 0 5px;
     outline: none;
     color: #9DBFAF;
@@ -216,5 +215,16 @@ select {
 
 .phone-custom{
   border-radius: 10px;
+}
+
+@media only screen and (max-width: 640px) {
+    input, select{
+        height: 34px!important;
+        font-size: 12px;
+    }
+    ::placeholder{
+        overflow: visible;
+        font-size: 12px;
+    }
 }
 </style>
