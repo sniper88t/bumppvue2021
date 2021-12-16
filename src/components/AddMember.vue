@@ -11,7 +11,7 @@
                             <img src="../assets/images/avatar_filter.svg" alt="" style="height:50px; width:50px;"/>
                         </div>
                         <div class="center-focus">
-                            <p class="glo-text-title font-weight-medium" style="font-size: 18px;">Rishabh Dubhey S/O Krishvaran</p>
+                            <p class="glo-text-title font-weight-bold" style="font-size: 18px;">Rishabh Dubhey S/O Krishvaran</p>
                         </div>
                         <div class="center-focus">
                             <div class="modal-input">
@@ -21,15 +21,10 @@
                         <div class="center-focus">
                             <v-row>
                                 <v-col cols="2">
-                                    <v-select
-                                    :items="tesPrefix"
-                                    placeholder="+65"
-                                    background-color="white"
-                                    height="24"
-                                    dense
-                                    class="phone-custom"
-                                    >
-                                    </v-select>
+                                    <select name="platform_access" class="form-control phone_prefix">
+                                        <option value="admin">+65</option>
+                                        <option value="view-only">+865</option>
+                                    </select>
                                 </v-col>
                                 <v-col cols="4">
                                     <div class="modal-input">
@@ -37,20 +32,14 @@
                                     </div>
                                 </v-col>
                                 <v-col cols="2">
-                                    <v-select
-                                    :items="tesPrefix"
-                                    placeholder="+65"
-                                    background-color="white"
-                                    height="24"
-                                    class="phone-custom"
-                                    disabled
-                                    dense
-                                    >
-                                    </v-select>
+                                    <select name="platform_access" class="form-control phone_prefix" style="opacity:0.6;">
+                                        <option value="admin">+65</option>
+                                        <option value="view-only">+765</option>
+                                    </select>
                                 </v-col>
                                 <v-col cols="4">
-                                    <div class="modal-input">
-                                        <input type="text" class="modal-input px-3 py-3" placeholder="Additional Number*" disabled>
+                                    <div class="modal-input" style="opacity:0.6;">
+                                        <input type="text" class="modal-input px-3 py-3" placeholder="Additional Number*" >
                                     </div>
                                 </v-col>
                             </v-row>
@@ -65,15 +54,7 @@
                             </div>
                         </div>
                         <div class="center-focus">
-                            <div class="modal-input">
-                                <button type="submit" class="searchButton">
-                                    <img src="../assets/images/Email Icon.svg" alt=""/>
-                                </button>
-                                <input type="text" class="modal-input" placeholder="Additional Email Address*">
-                            </div>
-                        </div>
-                        <div class="center-focus">
-                            <div class="modal-input">
+                            <div class="modal-input" style="opacity:0.6;">
                                 <button type="submit" class="searchButton">
                                     <img src="../assets/images/Email Icon.svg" alt=""/>
                                 </button>
@@ -114,8 +95,8 @@
                             <p class="subtitle-1 glo-text-title text-center font-weight-medium">Names and profile pictures can only be edited by users themselves, through the mobile app. Company details can be edited through your company’s page on this platform.</p>
                         </div>
                         <div class="bottom-btn">
-                            <div class="add-button">
-                                <a target="_blank" rel="noopener"><label class="add-button-text">Add Members</label></a>
+                            <div class="add-button" @click="saveData()">
+                                <a target="_blank" rel="noopener"><label class="add-button-text" style="padding-top: 4px;">Save Changes</label></a>
                             </div>
                         </div>
                     </div>
@@ -144,7 +125,7 @@ export default {
   props: {
     status: {
       type: String,
-      default: 'create',
+      default: '',
     },
     detail: {
       type: Object,
@@ -157,14 +138,17 @@ export default {
   },
   data() {
     return {
-        test:'',
-        telPrefix: ['+65', '+884', '+334', '+876'],
+        test:''
     }
   },
   methods: {
     onClose() {
       this.$emit('close');
     },
+    saveData(){
+        this.$emit('saveStatus')
+        this.onClose();
+    }
   }
 
 }
@@ -172,6 +156,12 @@ export default {
 
 <style scoped>
 @import '../assets/styles/common.css';
+@import '../assets/styles/responsive.css';
+
+Input:focus {
+  outline: none;
+}
+
 .center-focus{
     display: flex;
     justify-content: center;

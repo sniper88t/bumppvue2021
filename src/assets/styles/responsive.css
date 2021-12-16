@@ -1,0 +1,104 @@
+
+
+@media only screen and (max-width: 640px) {
+    .search-panel{
+        display: block!important;
+    }
+    .search{
+        width:100%;
+        margin: 14px auto!important;
+        
+    }
+    .search input{
+        font-size: 16px;
+    }
+    .add-button{
+        margin: 0 auto!important;
+    }
+    .td{
+        padding: 0.5em!important;
+    }
+    
+   
+}
+
+
+@media only screen and (min-width: 960px) {
+
+   
+}
+
+
+@media only screen and (max-width: 830px) {
+
+    .head-section {
+        display: none!important;
+        }
+    
+    
+    td, tr {
+        display: block!important;
+        width: 100%!important;
+        text-align: center;
+        }
+    nav{
+        display: none;
+    }
+    .responsive-card{
+        font-size: 20px!important;
+    }
+    .v-image{
+        margin: 0 auto!important;
+    }
+    img{
+        margin: 0 auto!important;
+    }
+      
+}
+    
+@media only screen and (max-width: 1030px) {
+    #mobile-searchbox{
+        display: block;
+    }
+    
+    #web-searchbox{
+        display: none;
+    }
+    
+    .head-section th:nth-child(1){
+        width: 30%!important;
+    }
+    .head-section th:nth-child(2){
+        width: 10%!important;
+    }
+    .head-section th:nth-child(3){
+        width: 24%!important;
+    }
+       
+}
+
+
+@media only screen and (min-width: 1264px) {
+.v-main{
+    padding-left: 200px!important;
+}
+
+}
+
+
+@media only screen and (min-width: 1030px) {
+    #mobile-searchbox{
+        display: none;
+    }
+    
+    #web-searchbox{
+        display: block;
+    }
+       
+}
+
+
+@media only screen and (min-width: 1904px) {
+
+   
+}

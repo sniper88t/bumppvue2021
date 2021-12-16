@@ -28,6 +28,7 @@ export default {
 </script>
 
 <style scoped>
-@import 'assets/styles/common.css';
+@import './assets/styles/common.css';
+@import './assets/styles/responsive.css';
 
 </style>
