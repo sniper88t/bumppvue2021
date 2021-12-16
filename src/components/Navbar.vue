@@ -67,6 +67,7 @@ export default {
 </script>
 <style scoped>
 .logo-title{
+    letter-spacing: .0.5rem;
     font-size: 14px;
     font-weight: bold;
     line-height: 1.2rem;
