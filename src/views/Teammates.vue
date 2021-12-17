@@ -35,13 +35,13 @@
             <th style="width: 5%;"></th>
             <th style="width: 5%;"></th>
           </tr>
-          <tr>
+          <tr v-for="item in users.members" :key="item.id">
             <td>
               <div class="row">
-                <div class="tbl_img"><v-avatar size="30px"><img src="/img1.png" ></v-avatar></div>
+                <div class="tbl_img"><v-avatar size="30px"><img :src="item.user.avatar" ></v-avatar></div>
                 <div class="col px-6">
-                  <div class="glo-text-title glo-text-format">Joshua Pang</div>
-                  <div class="glo-text-format" style="color:#565656">Tester</div>
+                  <div class="glo-text-title glo-text-format">{{item.user.first_name}}</div>
+                  <div class="glo-text-format" style="color:#565656">{{item.user.last_name}}</div>
                 </div>
               </div>
             </td>
@@ -62,62 +62,6 @@
             </td>
             <td><v-img src="../assets/images/Edit icon.svg" height="16" width="16" class="cursor-section"  @click="addMemberVisible = true"></v-img></td>
             <td><v-icon style="color:red;" height="16" width="16" class="cursor-section">fas fa-times-circle</v-icon></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="row ">
-                <div class="tbl_img"><v-avatar size="30px"><img src="/img2.png" ></v-avatar></div>
-                <div class="col px-6">
-                  <div class="glo-text-title glo-text-format">Jane Lee</div>
-                  <div class="glo-text-format" style="color:#565656">Backend Engineer</div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <v-img 
-                src="../assets/images/Singapore.png"
-                height="20"
-                width="30"
-                >
-              </v-img>
-            </td>
-            <td><a href="" style="color: #2C305D;"><span class="font-weight-medium glo-text-title responsive-card">View Card</span></a></td>
-            <td>
-              <select name="platform_access" class="form-control role_select">
-                <option value="admin">Admin</option>
-                <option value="view-only">View-Only</option>
-              </select>
-            </td>
-            <td><v-img src="../assets/images/Edit icon.svg" height="16" width="16" class="cursor-section"  @click="addMemberVisible = true"></v-img></td>
-            <td><v-icon style="color:red;" height="16" width="16">fas fa-times-circle</v-icon></td>
-          </tr>
-          <tr>  
-            <td>
-              <div class="row ">
-                <div class="tbl_img"><v-avatar size="30px"><img src="/img3.png" ></v-avatar></div>
-                <div class="col px-6">
-                  <div class="glo-text-title glo-text-format">Nicolas Ngoh</div>
-                  <div class="glo-text-format" style="color:#565656">QA Engineer</div>
-                </div>
-              </div>
-            </td>
-            <td>
-              <v-img 
-                src="../assets/images/Malaysia.png"
-                height="20"
-                width="30"
-                >
-              </v-img>
-            </td>
-            <td><a href="" style="color: #2C305D;"><span class="font-weight-medium glo-text-title responsive-card">View Card</span></a></td>
-            <td>
-              <select name="platform_access" class="form-control role_select">
-                <option value="admin">Admin</option>
-                <option value="view-only">View-Only</option>
-              </select>
-            </td>
-            <td><v-img src="../assets/images/Edit icon.svg" height="16" width="16" class="cursor-section" @click="addMemberVisible = true"></v-img></td>
-            <td><v-icon style="color:red;" height="16" width="16">fas fa-times-circle</v-icon></td>
           </tr>
         </table>
       </v-app>
@@ -147,6 +91,7 @@ import EditConfirm from '../components/EditConfirm.vue';
       addMemberDetail: {},
       addMemberVisible: false,
       editConfirm: false,
+      users:[]
 
     }),
    
@@ -157,6 +102,11 @@ import EditConfirm from '../components/EditConfirm.vue';
 
     methods: {
       initialize () {
+        const baseURI = 'https://bumpp-assessment.herokuapp.com/members'
+        this.$http.get(baseURI)
+        .then((result) => {
+          this.users = result.data
+        })
       },
     },
   }
