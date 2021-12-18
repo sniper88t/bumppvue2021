@@ -60,7 +60,7 @@
                 <option value="view-only">View-Only</option>
               </select>
             </td>
-            <td><v-img src="../assets/images/Edit icon.svg" height="16" width="16" class="cursor-section"  @click="addMemberVisible = true"></v-img></td>
+            <td><v-img src="../assets/images/Edit icon.svg" height="16" width="16" class="cursor-section"  @click="gotoEdit(item)"></v-img></td>
             <td><v-icon style="color:red;" height="16" width="16" class="cursor-section">fas fa-times-circle</v-icon></td>
           </tr>
         </table>
@@ -69,7 +69,7 @@
     <AddMember 
       :status="addMemberStatus" 
       :show="addMemberVisible" 
-      :detail="addMemberDetail" 
+      :detail="userData" 
       @close="addMemberVisible = false"
       @saveStatus="editConfirm=true"
     >
@@ -91,7 +91,8 @@ import EditConfirm from '../components/EditConfirm.vue';
       addMemberDetail: {},
       addMemberVisible: false,
       editConfirm: false,
-      users:[]
+      users:[],
+      userData:{}
 
     }),
    
@@ -108,6 +109,10 @@ import EditConfirm from '../components/EditConfirm.vue';
           this.users = result.data
         })
       },
+      gotoEdit(item){
+        this.userData = item;
+        this.addMemberVisible = true;
+      }
     },
   }
 </script>

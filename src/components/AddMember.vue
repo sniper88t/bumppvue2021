@@ -8,38 +8,36 @@
                             <img src="../assets/images/close.svg" alt="" />
                         </div>
                         <div class="center-focus edit_logo">
-                            <img src="../assets/images/avatar_filter.svg" alt="" style="height:50px; width:50px;"/>
+                            <img :src="user_avatar" alt="" style="height:50px; width:50px;"/>
                         </div>
                         <div class="center-focus">
-                            <p class="glo-text-title font-weight-bold edit_title" style="font-size: 18px;">Rishabh Dubhey S/O Krishvaran</p>
+                            <p class="glo-text-title font-weight-bold edit_title" style="font-size: 18px;">{{user_first_name}}:{{user_last_name}}</p>
                         </div>
                         <div class="center-focus">
                             <div class="modal-input">
-                                <input type="text" class="modal-input px-3 py-3" placeholder="Job Title">
+                                <input v-model="job_title" type="text" class="modal-input px-3 py-3" placeholder="Job Title">
                             </div>
                         </div>
                         <div class="center-focus">
                             <v-row>
                                 <v-col cols="3" sm="2">
-                                    <select name="platform_access" class="form-control phone_prefix">
-                                        <option value="admin">+65</option>
-                                        <option value="view-only">+865</option>
+                                    <select name="platform_access" class="form-control phone_prefix" placeholder="+65">
+                                        <option value="admin" >{{phone_code}}</option>
                                     </select>
                                 </v-col>
                                 <v-col cols="9" sm="4">
                                     <div class="modal-input">
-                                        <input type="text" class="modal-input px-3 py-3" placeholder="Mobile Number*">
+                                        <input v-model="phone_num" type="text" class="modal-input px-3 py-3" placeholder="Mobile Number*">
                                     </div>
                                 </v-col>
                                 <v-col cols="3" sm="2">
                                     <select name="platform_access" class="form-control phone_prefix" style="opacity:0.6;">
-                                        <option value="admin">+65</option>
-                                        <option value="view-only">+765</option>
+                                        <option value="admin">{{add_phone_code}}</option>
                                     </select>
                                 </v-col>
                                 <v-col cols="9" sm="4">
                                     <div class="modal-input" style="opacity:0.6;">
-                                        <input type="text" class="modal-input px-3 py-3" placeholder="Additional Number*" >
+                                        <input v-model="add_phone_num" type="text" class="modal-input px-3 py-3" placeholder="Additional Number*" >
                                     </div>
                                 </v-col>
                             </v-row>
@@ -50,7 +48,7 @@
                                 <button type="submit" class="searchButton">
                                     <img src="../assets/images/Email Icon.svg" alt=""/>
                                 </button>
-                                <input type="text" class="modal-input" placeholder="Email Address*">
+                                <input v-model="email" type="text" class="modal-input" placeholder="Email Address*">
                             </div>
                         </div>
                         <div class="center-focus">
@@ -58,7 +56,7 @@
                                 <button type="submit" class="searchButton">
                                     <img src="../assets/images/Email Icon.svg" alt=""/>
                                 </button>
-                                <input type="text" class="modal-input" placeholder="Additional Email Address*">
+                                <input v-model="add_email" type="text" class="modal-input" placeholder="Additional Email Address*">
                             </div>
                         </div>
                         <div class="center-focus">
@@ -66,7 +64,7 @@
                                 <button type="submit" class="searchButton">
                                     <img src="../assets/images/LinkedIn.png" alt=""/>
                                 </button>
-                                <input type="text" class="modal-input" placeholder="Linkedin Link">
+                                <input v-model="social_linkedin" type="text" class="modal-input" placeholder="Linkedin Link">
                             </div>
                         </div>
                         <div class="center-focus">
@@ -74,7 +72,7 @@
                                 <button type="submit" class="searchButton">
                                     <img src="../assets/images/Facebook.png" alt=""/>
                                 </button>
-                                <input type="text" class="modal-input" placeholder="Facebook Link">
+                                <input v-model="social_facebook" type="text" class="modal-input" placeholder="Facebook Link">
                             </div>
                         </div>
                         <div class="center-focus">
@@ -82,13 +80,13 @@
                                 <button type="submit" class="searchButton">
                                     <img src="../assets/images/Instagram.png" alt=""/>
                                 </button>
-                                <input type="text" class="modal-input" placeholder="@Instagram Link">
+                                <input v-model="social_instagram" type="text" class="modal-input" placeholder="@Instagram Link">
                             </div>
                             <div class="modal-input">
                                 <button type="submit" class="searchButton">
                                     <img src="../assets/images/Telegram.png" alt=""/>
                                 </button>
-                                <input type="text" class="modal-input" placeholder="@Telegram Link">
+                                <input v-model="social_telegram" type="text" class="modal-input" placeholder="@Telegram Link">
                             </div>
                         </div>
                         <div class="center-focus">
@@ -129,7 +127,7 @@ export default {
     },
     detail: {
       type: Object,
-      default: () => {},
+      default: () => [],
     },
     show: {
       type: Boolean,
@@ -138,16 +136,76 @@ export default {
   },
   data() {
     return {
-        test:''
+        user_avatar:'',
+        user_first_name:'',
+        user_last_name:'',
+        job_title:'',
+        phone_code:'+65',
+        phone_num:'',
+        add_phone_code:'+65',
+        add_phone_num:'',
+        email:'',
+        add_email:'',
+        social_linkedin:'',
+        social_facebook:'',
+        social_instagram:'',
+        social_telegram:'',
     }
   },
+    watch: {
+        show(val) {
+            if (val) {
+                this.initFunc();
+            }
+        },
+    },
+  moutned(){
+  },
   methods: {
+    initFunc(){
+        this.user_avatar = this.detail.user?.avatar;
+        this.user_first_name = this.detail.user?.first_name;
+        this.user_last_name =  this.detail.user?.last_name;
+        this.job_title= this.detail.overview?.job_title;
+        this.phone_code = this.detail.overview?.phone_number?.code;
+        this.phone_num = this.detail.overview?.phone_number.number;
+        this.add_phone_code =  this.detail.overview?.add_phone_number.code;
+        this.add_phone_num = this.detail.overview?.add_phone_number.number;
+        this.email = this.detail.overview?.email;
+        this.add_email =  this.detail.overview?.add_email;
+        this.social_linkedin = this.detail.overview.social_links[1]?.url;
+        this.social_facebook = this.detail.overview.social_links[0]?.url;
+        this.social_instagram = this.detail.overview.social_links[2]?.url;
+        this.social_telegram = this.detail.overview.social_links[3]?.url;
+
+    },
     onClose() {
       this.$emit('close');
     },
     saveData(){
-        this.$emit('saveStatus')
-        this.onClose();
+        if(this.detail.id){
+            const baseURI = 'https://bumpp-assessment.herokuapp.com/members/' + this.detail.id;
+            const body = {
+                "overview": {
+                    "job_title": this.job_title,
+                    "phone_code": this.phone_code,
+                }
+            }
+            this.$http.put(baseURI, body)
+            .then((result) => {
+                console.log(result.data.success);
+                if(result.data.success == true){
+                     this.$emit('saveStatus')
+                    this.onClose();
+                }
+                else{
+                    console.log("Saving data failed!");
+                }
+            })
+        }
+        
+
+       
     }
   }
 
